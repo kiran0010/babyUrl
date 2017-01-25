@@ -29,6 +29,7 @@
 	  	</div>
   	</div>   		
   	<h1 id="demo" style="text-align: center;">copy and paste the code to the url</h1>
+  	<!-- <h1 id="demo1" style="text-align: center;"></h1> -->
   	<script type="text/javascript">
 			$('#button1').click(function(e){
 		    e.preventDefault();
@@ -43,8 +44,12 @@
 		      type: 'post',
 		      data : url,
 		      success : function(result){          
-		        console.log(result);		       
-	        	$('#demo').html('localhost:3000/'+result.result);
+		        console.log(result);
+		        if (result.error == true){$('#demo').html(result.result);
+		        }	
+		        else{
+		        	$('#demo').html('localhost:3000/'+result.result);
+		        }	            	
 		        // window.location.href = "/student/list"
 		      }
 			  });   

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Url = require('../models/url');
 var shortid = require('shortid');
-
+var cvu = require('check-valid-url');
 
 
 /* GET home page. */
@@ -10,7 +10,20 @@ router.get('/', function (req, res, next){
   res.render('index');
 });
 
-router.post('/shortener',function (req,res,next){
+
+
+var checkUrl = function (req, res, next){
+	if (cvu.isUrl(req.body.originalUrl)){
+	  next();
+	}
+	else {
+	// console.log('Not a Url');
+	return res.json({error: true, result: 'plz enter a valid url'});
+	}	
+}
+
+
+router.post('/shortener', checkUrl, function (req,res,next){
 	// var data = req.body;	
 	//res.json(data);
 	// console.log(data);

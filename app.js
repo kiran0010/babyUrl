@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var shortid = require('shortid');
+var cvu = require('check-valid-url');
 
 
 var index = require('./routes/index');

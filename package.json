@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "check-valid-url": "0.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.5.2",
@@ -15,6 +16,7 @@
     "mongoose": "^4.7.7",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
-    "shortid": "^2.2.6"
+    "shortid": "^2.2.6",
+    "valid-url": "^1.0.9"
   }
 }
