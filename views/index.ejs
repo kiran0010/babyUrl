@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>short url</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+  	<div class="container-fluid" role="main" >
+  		<div class="row" style="height: 100px">
+  			<div class="col-sm-2" >		    	
+  			</div>
+  			<div class="col-sm-10" >
+  		  	<h3 style="text-align: left; color: black" class="pull-left"><b>URL SHORTENER</b></h3>
+  		  </div>
+  		</div>
+  		<div class="col-sm-12" style="background-color: lightblue; height: 150px">
+	  		<div class="col-sm-1" >		    	
+	  		</div>
+	  		<div class="col-sm-10" >
+	  			<h2 style="text-align: left; color: white" class="pull-left"><b>Simplify your links</b></h2>
+	  			<div class="col-sm-9" >
+	  				<input class="pull-left form-control" placeholder="Your original URL here" type="text" name="name" id="input1" style="width: 700px"></input> 
+	  			</div>
+	  			<div class="col-sm-3" >
+	  				<button class="btn btn-primary " id="button1" type="submit" >Create url</button>		 
+	  			</div>   
+	  		</div>
+	  	</div>
+  	</div>   		
+  	<h1 id="demo" style="text-align: center;">copy and paste the code to the url</h1>
+  	<script type="text/javascript">
+			$('#button1').click(function(e){
+		    e.preventDefault();
+			    var url = {
+		        originalUrl : $('#input1').val(),
+		      };
+  					
+  			// console.log(url);
+			  $.ajax({
+
+		      url : '/shortener',
+		      type: 'post',
+		      data : url,
+		      success : function(result){          
+		        console.log(result);		       
+	        	$('#demo').html('localhost:3000/'+result.result);
+		        // window.location.href = "/student/list"
+		      }
+			  });   
+			});
+  	</script>  
+  </body>
+</html>
