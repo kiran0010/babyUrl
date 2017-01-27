@@ -11,6 +11,7 @@ var cvu = require('check-valid-url');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+// var first = require('./routes/first');
 
 
 mongoose.connect('mongodb://localhost/urlData');
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+// app.use('/',first);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

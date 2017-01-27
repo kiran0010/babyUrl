@@ -3,6 +3,7 @@ var router = express.Router();
 var Url = require('../models/url');
 var shortid = require('shortid');
 var cvu = require('check-valid-url');
+var isRedirect = require('is-redirect');
 
 
 /* GET home page. */
@@ -45,7 +46,15 @@ router.post('/shortener', checkUrl, function (req,res,next){
 router.get('/:surl', function (req, res, next) {
   Url.findOne({shortUrl : req.params.surl})
   .exec(function (err,url){
-  	return res.render('list',{url:url})
+  	// return res.render('list',{url:url})
+  	var match = url.originalUrl.match(/^https:\/\/|http:\/\//)
+  	if (match === null) {
+  		// console.log('http://'+url.originalUrl);
+  		res.redirect('http://'+url.originalUrl);
+  	} else {
+  		res.redirect(url.originalUrl);
+  	}
+  	
   });
 });
 
