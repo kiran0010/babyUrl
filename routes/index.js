@@ -3,7 +3,7 @@ var router = express.Router();
 var Url = require('../models/url');
 var shortid = require('shortid');
 var cvu = require('check-valid-url');
-var isRedirect = require('is-redirect');
+// var isRedirect = require('is-redirect');
 
 
 /* GET home page. */
