@@ -14,7 +14,7 @@ var users = require('./routes/users');
 // var first = require('./routes/first');
 
 
-mongoose.connect('mongodb://localhost/urlData');
+mongoose.connect('mongodb://kiran0010:kiran@106680@ds137749.mlab.com:37749/urldata');
 
 var app = express();
 
