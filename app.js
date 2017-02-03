@@ -19,8 +19,14 @@ mongoose.connect('mongodb://kiran:12345@ds137749.mlab.com:37749/urldata');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
+
+
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
