@@ -50,7 +50,8 @@
 		        if (result.error == true){$('#demo').html(result.result);
 		        }	
 		        else{
-		        	$('#demo').html('localhost:3000/'+result.result);
+		        	// $('#demo').html('localhost:3000/'+result.result);
+		        	$('#demo').html('https://kdurl.herokuapp.com/'+result.result);
 		        }	            	
 		        // window.location.href = "/student/list"
 		      }
