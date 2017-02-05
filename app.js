@@ -14,6 +14,11 @@ var users = require('./routes/users');
 // var first = require('./routes/first');
 
 
+// this is use for run local pc
+// mongoose.connect('mongodb://localhost/urlData');
+
+
+// this is use for heroku 
 mongoose.connect('mongodb://kiran:12345@ds137749.mlab.com:37749/urldata');
 
 var app = express();

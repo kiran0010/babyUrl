@@ -4,6 +4,8 @@
     <title>short url</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+     <link rel="shortcut icon" href="favicon.ico">
+
   </head>
   <body>
   	<div class="container-fluid" role="main" >
@@ -37,10 +39,10 @@
 		        originalUrl : $('#input1').val(),
 		      };
   					
-  			// console.log(url);
+  			console.log(url);
 			  $.ajax({
 
-		      url : '/shortener',
+		      url : '/urls',
 		      type: 'post',
 		      data : url,
 		      success : function(result){          
