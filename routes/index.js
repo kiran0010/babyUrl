@@ -49,6 +49,9 @@ router.get('/:surl', function (req, res, next) {
   .exec(function (err,url){
   	// return res.render('list',{url:url})
   	console.log(url);
+  	if(err || url === null){
+  			return res.send('error');
+  		} else {
   	// console.log(url.originalUrl);
   	var match = url.originalUrl.match(/^https:\/\/|http:\/\//)
   	console.log(match)
@@ -58,6 +61,7 @@ router.get('/:surl', function (req, res, next) {
   	} else {
   		res.redirect(url.originalUrl);
   	}
+  }
   	// res.redirect(url.originalUrl);
   });
 });
